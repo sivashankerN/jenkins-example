@@ -13,7 +13,14 @@ pipeline {
         }
         stage('Deploy') {
             steps { 
-                sh 'echo  $HOME' 
+                sh 'echo  $HOME'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                    cd $HOME
+                    pwd
+                    echo "Hello Siva"
+                '''
             }
         }
     }
